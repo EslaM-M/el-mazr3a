@@ -2,10 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import ReactImageGallery from "react-image-gallery";
 import Transition from "../utils/Transition.js";
 import firstPicture from "../public/images/galary/1.jpeg";
+import { useTranslation } from "react-i18next";
 function Features() {
   const [tab, setTab] = useState(1);
 
   const tabs = useRef(null);
+  const { t } = useTranslation('gallery');
 
   const images = [
     {
@@ -43,7 +45,7 @@ function Features() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Our Gallery</h1>
+            <h1 className="h2 mb-4">{t('gallery-header')}</h1>
             <p className="text-xl text-gray-600">
               We are making the beauty around you.
             </p>

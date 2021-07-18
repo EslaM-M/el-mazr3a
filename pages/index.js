@@ -7,7 +7,7 @@ import FeaturesBlocks from '../components/FeaturesBlocks';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
-
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import AOS from "aos";
 
 export default function Home() {
@@ -39,4 +39,13 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+export async function getStaticProps({ locale }) {
+  console.log(locale)
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common','gallery'])),
+      // Will be passed to the page component as props
+    },
+  };
 }
