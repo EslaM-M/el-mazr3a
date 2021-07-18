@@ -2778,6 +2778,11 @@ react-dom@17.0.2:
     object-assign "^4.1.1"
     scheduler "^0.20.2"
 
+react-image-gallery@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-image-gallery/-/react-image-gallery-1.2.4.tgz#bf12b7ff8b03a019ce8a9c6652a7f8e94480bb1c"
+  integrity sha512-M9iNjYHm1f8C55PQd3EBv5I6wF6FbjV9sIlMtjJwTVAR7ryJwd5/9m7b/k9/029uYNPIL4kF8shY7mn9IMUvHQ==
+
 react-is@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
