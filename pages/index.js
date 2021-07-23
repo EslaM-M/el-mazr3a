@@ -5,7 +5,7 @@ import HeroHome from '../components/HeroHome';
 import FeaturesHome from '../components/Features';
 import FeaturesBlocks from '../components/FeaturesBlocks';
 import Testimonials from '../components/Testimonials';
-import Newsletter from '../components/Newsletter';
+import ContactUs from '../components/ContactUs';
 import Footer from '../components/Footer';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import AOS from "aos";
@@ -32,7 +32,7 @@ export default function Home() {
         <FeaturesHome />
         <FeaturesBlocks />
         <Testimonials />
-        <Newsletter />
+        <ContactUs />
       </main>
 
       {/*  Site footer */}
