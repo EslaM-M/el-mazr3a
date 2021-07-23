@@ -2,13 +2,13 @@ import { useEffect } from "react";
 
 import Header from '../components/Header';
 import HeroHome from '../components/HeroHome';
-import FeaturesHome from '../components/Features';
+import Gallery from '../components/Gallery';
 import FeaturesBlocks from '../components/FeaturesBlocks';
-import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
 import Footer from '../components/Footer';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import AOS from "aos";
+import Items from "../components/Items";
 
 export default function Home() {
   useEffect(() => {
@@ -29,9 +29,9 @@ export default function Home() {
       <main className="flex-grow">
         {/*  Page sections */}
         <HeroHome />
-        <FeaturesHome />
+        <Gallery />
         <FeaturesBlocks />
-        <Testimonials />
+        <Items />
         <Newsletter />
       </main>
 

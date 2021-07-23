@@ -8,7 +8,7 @@ function FeaturesBlocks() {
         className="absolute inset-0 top-1/2 md:mt-24 lg:mt-0 bg-green-600 pointer-events-none"
         aria-hidden="true"
       ></div>
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="relative max-w-full mx-96 px-4 sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-8 md:pb-8">
@@ -21,7 +21,7 @@ function FeaturesBlocks() {
           </div>
 
           {/* Items */}
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* 5th item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               <img src="/images/eye-solid.svg" width="100" />
