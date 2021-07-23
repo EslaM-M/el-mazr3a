@@ -16,8 +16,8 @@ function HeroHome() {
               type and scrambled it to make a type specimen book.
             </p>
             <div className="flex flex-row mt-5">
-              <div class="flex mt-3 w-48 h-14 bg-transparent text-white border border-white rounded-xl items-center justify-center">
-                <div class="mr-3">
+              <div className="flex mt-3 w-48 h-14 bg-transparent text-white border border-white rounded-xl items-center justify-center">
+                <div className="mr-3">
                   <svg viewBox="0 0 384 512" width="30">
                     <path
                       fill="currentColor"
@@ -26,15 +26,15 @@ function HeroHome() {
                   </svg>
                 </div>
                 <div>
-                  <div class="text-xs">Download on the</div>
-                  <div class="text-2xl font-semibold font-sans -mt-1">
+                  <div className="text-xs">Download on the</div>
+                  <div className="text-2xl font-semibold font-sans -mt-1">
                     App Store
                   </div>
                 </div>
               </div>
 
-              <div class="flex ml-4 mt-3 w-48 h-14 bg-gray text-white rounded-lg border border-white rounded-xl items-center justify-center">
-                <div class="mr-3">
+              <div className="flex ml-4 mt-3 w-48 h-14 bg-gray text-white rounded-lg border border-white rounded-xl items-center justify-center">
+                <div className="mr-3">
                   <svg viewBox="30 336.7 120.9 129.2" width="30">
                     <path
                       fill="#FFD400"
@@ -55,8 +55,8 @@ function HeroHome() {
                   </svg>
                 </div>
                 <div>
-                  <div class="text-xs">GET IT ON</div>
-                  <div class="text-xl font-semibold font-sans -mt-1">
+                  <div className="text-xs">GET IT ON</div>
+                  <div className="text-xl font-semibold font-sans -mt-1">
                     Google Play
                   </div>
                 </div>
