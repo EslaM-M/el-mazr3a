@@ -27,15 +27,10 @@ function FeaturesBlocks() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-8 md:pb-8">
             <h2 className="h2  text-green-600">{t("why_use_mosmera")}</h2>
-            {/* <p className="text-xl text-gray-600">
-              The Garden is an agriculture service that helps you to plant your
-              home with Fruitful plants and provide consultation for making
-              these plants grow the right way.
-            </p> */}
           </div>
 
           {/* Items */}
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" data-aos="zoom-y-out">
             {/* 5th item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
               <FontAwesomeIcon

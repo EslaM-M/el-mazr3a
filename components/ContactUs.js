@@ -11,20 +11,12 @@ export default function ContactUs() {
         <div className="pb-12 md:pb-20">
           {/* CTA box */}
           <div
-            className="relative bg-gray-900 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden"
+            className="relative bg-gray-900 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden flex"
             data-aos="zoom-y-out"
           >
-            {/* Background illustration */}
-            <div
-              className="absolute right-0 bottom-0 pointer-events-none hidden lg:block"
-              aria-hidden="true"
-            >
-              <img src="/images/fruits.png" height={300} width={300} />
-            </div>
-
-            <div className="relative flex flex-col lg:flex-row justify-between items-center">
+            <div className="relative flex flex-col lg:flex-row justify-between items-center flex-1">
               {/* CTA content */}
-              <div className="text-center lg:text-left lg:max-w-xl">
+              <div className="lg:max-w-xl">
                 <h3 className="h3 text-white mb-2">
                   {t("setup_farm_request")}
                 </h3>
@@ -37,19 +29,17 @@ export default function ContactUs() {
                   <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
                     <input
                       type="phone"
-                      className="w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-gray-500"
+                      className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400"
                       placeholder={t("phonenumber")}
                       aria-label="Phone number"
                     />
                     <input
-                      className="w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-gray-500 lg:mx-2"
+                      className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400 lg:mx-2"
                       type="text"
                       placeholder={t("address")}
                       aria-label="Address"
                     />
-                    <button
-                      className="btn text-white bg-blue-600 hover:bg-blue-700 shadow truncate"
-                    >
+                    <button className="btn text-white bg-green-600 hover:bg-green-700 shadow truncate">
                       {t("setup_farm_request")}
                     </button>
                   </div>
@@ -60,6 +50,14 @@ export default function ContactUs() {
                   </p>
                 </form>
               </div>
+            </div>
+
+            {/* Background illustration */}
+            <div
+              className="pointer-events-none hidden lg:block"
+              aria-hidden="true"
+            >
+              <img src="/images/fruits.png" height={200} width={200} />
             </div>
           </div>
         </div>
