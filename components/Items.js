@@ -77,6 +77,7 @@ function Items() {
             >
               <Image
                 src="/images/arrow_back.svg"
+                className="hover:opacity-50"
                 width="100"
                 height="100"
                 alt="back navigation"
@@ -103,6 +104,7 @@ function Items() {
             <div className="flex flex-col items-center justify-center py-2  md:col-auto">
               <Image
                 src="/images/arrow_forward.svg"
+                className="hover:opacity-50"
                 width="100"
                 height="100"
                 alt="forward navigation"
