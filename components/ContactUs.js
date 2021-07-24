@@ -1,6 +1,10 @@
 import React from "react";
 
+import { useTranslation } from "next-i18next";
+
 export default function ContactUs() {
+  const { t } = useTranslation("landing");
+
   return (
     <section id="contactus">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -21,10 +25,11 @@ export default function ContactUs() {
             <div className="relative flex flex-col lg:flex-row justify-between items-center">
               {/* CTA content */}
               <div className="text-center lg:text-left lg:max-w-xl">
-                <h3 className="h3 text-white mb-2">Start Now</h3>
+                <h3 className="h3 text-white mb-2">
+                  {t("setup_farm_request")}
+                </h3>
                 <p className="text-gray-300 text-lg mb-6">
-                  One of our engineers will contact you to setup your own farm
-                  whether in your balacony or garden or on roof.
+                  {t("setup_farm_contactus_description")}
                 </p>
 
                 {/* CTA form */}
@@ -33,26 +38,25 @@ export default function ContactUs() {
                     <input
                       type="phone"
                       className="w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-gray-500"
-                      placeholder="Phone number"
+                      placeholder={t("phonenumber")}
                       aria-label="Phone number"
                     />
                     <input
                       className="w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-white placeholder-gray-500 lg:mx-2"
                       type="text"
-                      placeholder="Address"
+                      placeholder={t("address")}
                       aria-label="Address"
                     />
                     <button
-                      className="btn text-white bg-blue-600 hover:bg-blue-700 shadow"
-                      href="#0"
+                      className="btn text-white bg-blue-600 hover:bg-blue-700 shadow truncate"
                     >
-                      Subscribe
+                      {t("setup_farm_request")}
                     </button>
                   </div>
                   {/* Success message */}
                   {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}
                   <p className="text-sm text-gray-400 mt-3">
-                    Setup starts with 70EGP.
+                    {t("setup_pricing_starts_with")}
                   </p>
                 </form>
               </div>

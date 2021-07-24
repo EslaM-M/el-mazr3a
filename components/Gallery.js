@@ -7,7 +7,7 @@ function Gallery() {
   const [tab, setTab] = useState(1);
 
   const tabs = useRef(null);
-  const { t } = useTranslation('gallery');
+  const { t } = useTranslation('landing');
 
   const images = [
     {
@@ -33,7 +33,7 @@ function Gallery() {
   ];
 
   return (
-    <section className="relative">
+    <section className="relative" data-aos="zoom-y-out">
       {/* Section background (needs .relative className on parent and next sibling elements) */}
       <div
         className="absolute inset-0 bg-gray-100 pointer-events-none mb-16"
@@ -45,9 +45,9 @@ function Gallery() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">{t('gallery-header')}</h1>
+            <h1 className="h2 mb-4">{t('latest_work')}</h1>
             <p className="text-xl text-gray-600">
-              We are making the beauty around you.
+              {t("mosmera_slogan_2")}
             </p>
           </div>
         </div>

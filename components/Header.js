@@ -1,8 +1,28 @@
 import React, { useState, useEffect } from "react";
 
+import { useRouter } from "next/router";
+
+import { useTranslation } from "next-i18next";
+
+import { faSeedling } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+function LanguageSwitcher({}) {
+  const { locale } = useRouter();
+
+  return (
+    <a
+      href={locale === "en" ? "/ar" : "/en"}
+      className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2"
+    >
+      {locale === "en" ? "ع" : "EN"}
+    </a>
+  );
+}
+
 function Header() {
   const [top, setTop] = useState(true);
-
+  const { t } = useTranslation("landing");
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
     const scrollHandler = () => {
@@ -61,25 +81,21 @@ function Header() {
                 <a href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</a>
               </li> */}
               <li>
+                <LanguageSwitcher />
                 <button
-                  className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 ml-3"
+                  className={`btn-sm ${
+                    top
+                      ? "text-green-500 bg-gray-100 hover:bg-gray-200"
+                      : "text-white bg-green-400 hover:bg-green-500"
+                  }`}
                   onClick={() =>
                     document
                       .getElementById("contactus")
                       .scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  <span>Start Now</span>
-                  <svg
-                    className="w-3 h-3 fill-current text-green-400 flex-shrink-0 ml-2 -mr-1"
-                    viewBox="0 0 12 12"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z"
-                      fillRule="nonzero"
-                    />
-                  </svg>
+                  <span>{t("setup_farm_request")}</span>
+                  <FontAwesomeIcon icon={faSeedling} className="ms-2" />
                 </button>
               </li>
             </ul>

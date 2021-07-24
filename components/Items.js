@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 const productList = [
   {
@@ -40,6 +41,8 @@ function Items() {
   const [endIndex, setEndIndex] = useState(5);
   const [products, setProducts] = useState([]);
 
+  const { t } = useTranslation("landing");
+
   useEffect(() => {
     const filteredProducts = productList.slice(startIndex, endIndex);
     setProducts(filteredProducts);
@@ -66,7 +69,7 @@ function Items() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4">Products</h2>
+          <h2 className="h2 mb-4">{t("seeds_you_can_farm")}</h2>
           </div>
           {/* Items */}
           <div className="flex space-x-2">

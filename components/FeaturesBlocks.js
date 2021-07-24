@@ -1,6 +1,20 @@
 import React from "react";
 
+import { useTranslation } from "next-i18next";
+
+import {
+  faSeedling,
+  faMobile,
+  faMobileAlt,
+  faLemon,
+  faCarrot,
+  faAppleAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 function FeaturesBlocks() {
+  const { t } = useTranslation("landing");
+
   return (
     <section className="relative">
       {/* Section background (needs .relative className on parent and next sibling elements) */}
@@ -12,7 +26,7 @@ function FeaturesBlocks() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-8 md:pb-8">
-            <h2 className="h2  text-green-600">Why Use Mosmera ?</h2>
+            <h2 className="h2  text-green-600">{t("why_use_mosmera")}</h2>
             {/* <p className="text-xl text-gray-600">
               The Garden is an agriculture service that helps you to plant your
               home with Fruitful plants and provide consultation for making
@@ -24,34 +38,41 @@ function FeaturesBlocks() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {/* 5th item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-              <img src="/images/eye-solid.svg" width="100" />
+              <FontAwesomeIcon
+                icon={faSeedling}
+                className="text-7xl text-green-500 mb-2"
+              />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
-                Preview
+                {t("farm_setup")}
               </h4>
               <p className="text-gray-600 text-center">
-                the place you want to plant and determine the plants that can be
-                planted
+                {t("farm_setup_description")}
               </p>
             </div>
             {/* 6th item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-              <img src="/images/plant.svg" width="100" />
+              <FontAwesomeIcon
+                icon={faMobileAlt}
+                className="text-7xl text-green-500 mb-2"
+              />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
-                Plant
+                {t("consultation_and_followup")}
               </h4>
               <p className="text-gray-600 text-center">
-                Your the place you want like  garden, house roof or balcony .
+                {t("consultation_and_followup_description")}
               </p>
             </div>
             {/* 3rd item */}
             <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
-              <img src="/images/phone.svg" width="100" />
-
+            <FontAwesomeIcon
+                icon={faAppleAlt}
+                className="text-7xl text-green-500 mb-2"
+              />
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">
-                Follow Up
+                {t("harvest")}
               </h4>
               <p className="text-gray-600 text-center">
-                Through mobile app that remind you with the daily activity.
+                {t("harvest_description")}
               </p>
             </div>
           </div>

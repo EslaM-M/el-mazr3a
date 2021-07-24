@@ -1,6 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 
 function Footer() {
+  const { t } = useTranslation("landing");
+
   return (
     <footer>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -33,7 +36,7 @@ function Footer() {
           </ul>
 
           {/* Copyrights note */}
-          <div className="text-sm text-gray-600 mr-4">Made by <a className="text-blue-600 hover:underline" href="https://cruip.com/">ReNexTology</a>. All rights reserved.</div>
+          <div className="text-sm text-gray-600 mr-4">{t("footer_copyright")}</div>
         </div>
 
       </div>
