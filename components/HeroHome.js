@@ -17,7 +17,7 @@ function HeroHome() {
             <h2 className="text-4xl text-white">{t("mosmera_slogan")}</h2>
             <p className="text-white mt-5">{t("mosmera_brief")}</p>
             <div className="flex flex-row mt-5">
-              <div className="flex mt-3 w-48 h-14 bg-transparent text-white border border-white rounded-xl items-center justify-center">
+              <div className="flex mt-3 lg:w-48 h-14 bg-transparent text-white border border-white rounded-xl items-center justify-center px-1">
                 <div className="me-3">
                   <FontAwesomeIcon icon={faApple} className="text-3xl" />
                 </div>
@@ -29,7 +29,7 @@ function HeroHome() {
                 </div>
               </div>
 
-              <div className="flex ms-4 mt-3 w-48 h-14 bg-gray text-white rounded-lg border border-white rounded-xl items-center justify-center">
+              <div className="flex ms-4 mt-3 lg:w-48 h-14 bg-gray text-white rounded-lg border border-white rounded-xl items-center justify-center px-1">
                 <div className="me-3">
                   <FontAwesomeIcon icon={faGooglePlay} className="text-3xl" />
                 </div>
@@ -46,7 +46,7 @@ function HeroHome() {
         <img
           src="/images/mobile-app-screen.png"
           width="200"
-          className="-mb-40 z-10"
+          className="-mb-40 z-10 hidden lg:block"
         />
       </div>
     </section>
