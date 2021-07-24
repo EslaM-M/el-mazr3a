@@ -3,7 +3,7 @@ import React from "react";
 function HeroHome() {
   return (
     <section className="relative bg-gradient-to-r from-green-600 to-green-500 pt-32 pb-12 md:pt-40 md:pb-20">
-      <div className="max-w-full mx-96 px-4 sm:px-6 flex flex-row items-center">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-row items-center">
         <div className="flex-1" data-aos="zoom-y-out">
           <div className="max-w-lg">
             <h2 className="text-4xl text-white">

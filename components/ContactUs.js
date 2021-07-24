@@ -3,7 +3,7 @@ import React from "react";
 export default function ContactUs() {
   return (
     <section id="contactus">
-      <div className="max-w-full mx-96 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pb-12 md:pb-20">
           {/* CTA box */}
           <div
