@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useRouter } from "next/router";
 
 const productList = [
   {
@@ -42,6 +48,7 @@ function Items() {
   const [products, setProducts] = useState([]);
 
   const { t } = useTranslation("landing");
+  const { locale } = useRouter();
 
   useEffect(() => {
     const filteredProducts = productList.slice(startIndex, endIndex);
@@ -69,7 +76,7 @@ function Items() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mx-auto text-center pb-12 md:pb-16">
-          <h2 className="h2 mb-4">{t("seeds_you_can_farm")}</h2>
+            <h2 className="h2 mb-4">{t("seeds_you_can_farm")}</h2>
           </div>
           {/* Items */}
           <div className="flex space-x-2">
@@ -78,12 +85,10 @@ function Items() {
               className="flex flex-col items-center justify-center py-2  md:col-auto"
               onClick={onBackClicked}
             >
-              <Image
-                src="/images/arrow_back.svg"
-                className="hover:opacity-50"
-                width="100"
-                height="100"
-                alt="back navigation"
+              <FontAwesomeIcon
+                onClick={onBackClicked}
+                icon={locale == "ar" ? faChevronRight : faChevronLeft}
+                className="text-6xl text-green-500 hover:opacity-50  mb-2"
               />
             </div>
 
@@ -105,13 +110,10 @@ function Items() {
             })}
 
             <div className="flex flex-col items-center justify-center py-2  md:col-auto">
-              <Image
-                src="/images/arrow_forward.svg"
-                className="hover:opacity-50"
-                width="100"
-                height="100"
-                alt="forward navigation"
+              <FontAwesomeIcon
                 onClick={onForwardClicked}
+                icon={locale == "ar" ? faChevronLeft : faChevronRight}
+                className="text-6xl hover:opacity-50 text-green-500 mb-2"
               />
             </div>
           </div>
