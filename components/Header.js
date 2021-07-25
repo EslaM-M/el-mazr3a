@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useRouter } from "next/router";
+import Link from 'next/link';
 
 import { useTranslation } from "next-i18next";
 
@@ -11,12 +12,12 @@ function LanguageSwitcher({}) {
   const { locale } = useRouter();
 
   return (
-    <a
+    <Link
       href={locale === "en" ? "/ar" : "/en"}
       className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2"
     >
       {locale === "en" ? "ع" : "EN"}
-    </a>
+    </Link>
   );
 }
 
@@ -43,7 +44,7 @@ function Header() {
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
-            <a href="/" className="block" aria-label="Cruip">
+            <Link href="/" className="block" aria-label="Cruip">
               <svg
                 className="w-8 h-8"
                 viewBox="0 0 32 32"
@@ -71,15 +72,12 @@ function Header() {
                   fillRule="nonzero"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           {/* Site navigation */}
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
-              {/* <li>
-                <a href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</a>
-              </li> */}
               <li>
                 <LanguageSwitcher />
                 <button

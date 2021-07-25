@@ -5,6 +5,7 @@ import { useTranslation } from "next-i18next";
 import {} from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 function HeroHome() {
   const { t } = useTranslation("landing");
@@ -43,7 +44,8 @@ function HeroHome() {
             </div>
           </div>
         </div>
-        <img
+        <Image
+          alt="mobile screen"
           src="/images/mobile-app-screen.png"
           width="200"
           className="-mb-40 z-10 hidden lg:block"

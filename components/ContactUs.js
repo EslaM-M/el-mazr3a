@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 
 import axiosInstance from "../libs/axiosInstance";
+import Image from "next/image";
 export default function ContactUs() {
   const { t } = useTranslation("landing");
 
@@ -85,7 +86,7 @@ export default function ContactUs() {
               className="pointer-events-none hidden lg:block"
               aria-hidden="true"
             >
-              <img src="/images/fruits.png" height={200} width={200} />
+              <Image alt="fruits" src="/images/fruits.png" height={200} width={200} />
             </div>
           </div>
         </div>
