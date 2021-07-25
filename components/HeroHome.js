@@ -47,6 +47,7 @@ function HeroHome() {
         <Image
           alt="mobile screen"
           src="/images/mobile-app-screen.png"
+          height="400"
           width="200"
           className="-mb-40 z-10 hidden lg:block"
         />

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { useRouter } from "next/router";
-import Link from 'next/link';
-
+import Link from "next/link";
 import { useTranslation } from "next-i18next";
 
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
@@ -12,11 +11,10 @@ function LanguageSwitcher({}) {
   const { locale } = useRouter();
 
   return (
-    <Link
-      href={locale === "en" ? "/ar" : "/en"}
-      className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2"
-    >
-      {locale === "en" ? "ع" : "EN"}
+    <Link href={locale === "en" ? "/ar" : "/en"}>
+      <a className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2">
+        {locale === "en" ? "ع" : "EN"}
+      </a>
     </Link>
   );
 }
@@ -44,40 +42,45 @@ function Header() {
           {/* Site branding */}
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
-            <Link href="/" className="block" aria-label="Cruip">
-              <svg
-                className="w-8 h-8"
-                viewBox="0 0 32 32"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <radialGradient
-                    cx="21.152%"
-                    cy="86.063%"
-                    fx="21.152%"
-                    fy="86.063%"
-                    r="79.941%"
-                    id="header-logo"
-                  >
-                    <stop stopColor="#4FD1C5" offset="0%" />
-                    <stop stopColor="#81E6D9" offset="25.871%" />
-                    <stop stopColor="#338CF5" offset="100%" />
-                  </radialGradient>
-                </defs>
-                <rect
-                  width="32"
-                  height="32"
-                  rx="16"
-                  fill="url(#header-logo)"
-                  fillRule="nonzero"
-                />
-              </svg>
+            <Link href="/">
+              <a className="block" aria-label="Cruip">
+                <svg
+                  className="w-8 h-8"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs>
+                    <radialGradient
+                      cx="21.152%"
+                      cy="86.063%"
+                      fx="21.152%"
+                      fy="86.063%"
+                      r="79.941%"
+                      id="header-logo"
+                    >
+                      <stop stopColor="#4FD1C5" offset="0%" />
+                      <stop stopColor="#81E6D9" offset="25.871%" />
+                      <stop stopColor="#338CF5" offset="100%" />
+                    </radialGradient>
+                  </defs>
+                  <rect
+                    width="32"
+                    height="32"
+                    rx="16"
+                    fill="url(#header-logo)"
+                    fillRule="nonzero"
+                  />
+                </svg>
+              </a>
             </Link>
           </div>
 
           {/* Site navigation */}
           <nav className="flex flex-grow">
             <ul className="flex flex-grow justify-end flex-wrap items-center">
+              {/* <li>
+                <a href="/signin" className="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out">Sign in</a>
+              </li> */}
               <li>
                 <LanguageSwitcher />
                 <button
