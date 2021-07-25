@@ -88,7 +88,7 @@ function Items() {
               <FontAwesomeIcon
                 onClick={onBackClicked}
                 icon={locale == "ar" ? faChevronRight : faChevronLeft}
-                className="text-6xl text-green-500 hover:opacity-50  mb-2"
+                className="text-2xl md:text-6xl text-green-500 hover:opacity-50  mb-2"
               />
             </div>
 
@@ -113,7 +113,7 @@ function Items() {
               <FontAwesomeIcon
                 onClick={onForwardClicked}
                 icon={locale == "ar" ? faChevronLeft : faChevronRight}
-                className="text-6xl hover:opacity-50 text-green-500 mb-2"
+                className="text-2xl md:text-6xl hover:opacity-50 text-green-500 mb-2"
               />
             </div>
           </div>

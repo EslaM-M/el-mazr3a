@@ -44,13 +44,14 @@ function HeroHome() {
             </div>
           </div>
         </div>
+        <div className="-mb-40 z-10 hidden lg:block">
         <Image
           alt="mobile screen"
           src="/images/mobile-app-screen.png"
           height="400"
           width="200"
-          className="-mb-40 z-10 hidden lg:block"
         />
+        </div>
       </div>
     </section>
   );
