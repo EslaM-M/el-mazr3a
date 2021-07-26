@@ -1,4 +1,5 @@
-import 'tailwindcss/tailwind.css'
+import '../styles/globals.css'
+
 import '../styles/landing/landing.scss'
 import "react-image-gallery/styles/scss/image-gallery.scss";
 import { appWithTranslation } from 'next-i18next';
