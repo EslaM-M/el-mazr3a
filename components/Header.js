@@ -11,10 +11,10 @@ function LanguageSwitcher({}) {
   const { locale } = useRouter();
 
   return (
-    <Link href={locale === "en" ? "/ar" : "/en"}>
-      <a className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2">
+    <Link href="/" locale={locale === "en" ? "ar" : "en"}>
+      <span className="btn-sm text-green-500 bg-gray-100 hover:bg-gray-200 me-2">
         {locale === "en" ? "ع" : "EN"}
-      </a>
+      </span>
     </Link>
   );
 }
@@ -43,7 +43,7 @@ function Header() {
           <div className="flex-shrink-0 mr-4">
             {/* Logo */}
             <Link href="/">
-              <a className="block" aria-label="Cruip">
+              <span className="block" aria-label="Cruip">
                 <svg
                   className="w-8 h-8"
                   viewBox="0 0 32 32"
@@ -71,7 +71,7 @@ function Header() {
                     fillRule="nonzero"
                   />
                 </svg>
-              </a>
+              </span>
             </Link>
           </div>
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 import {} from "@fortawesome/free-solid-svg-icons";
 import { faApple, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
@@ -45,12 +46,12 @@ function HeroHome() {
           </div>
         </div>
         <div className="-mb-40 z-10 hidden lg:block">
-        <Image
-          alt="mobile screen"
-          src="/images/mobile-app-screen.png"
-          height="400"
-          width="200"
-        />
+          <Image
+            alt="mobile screen"
+            src="/images/mobile-app-screen.png"
+            height="400"
+            width="200"
+          />
         </div>
       </div>
     </section>
