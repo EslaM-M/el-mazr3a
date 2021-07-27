@@ -44,7 +44,7 @@ const productList = [
 ];
 function Items() {
   const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setEndIndex] = useState(5);
+  const [endIndex, setEndIndex] = useState(4);
   const [products, setProducts] = useState([]);
 
   const { t } = useTranslation("landing");
@@ -82,13 +82,13 @@ function Items() {
           <div className="flex space-x-2">
             {/* Item */}
             <div
-              className="flex flex-col items-center justify-center py-2  md:col-auto"
+              className="flex flex-col items-center justify-center p-6  md:col-auto"
               onClick={onBackClicked}
             >
               <FontAwesomeIcon
                 onClick={onBackClicked}
                 icon={locale == "ar" ? faChevronRight : faChevronLeft}
-                className="text-2xl md:text-6xl text-green-500 hover:opacity-50  mb-2"
+                className="text-2xl md:text-6xl text-green-500 hover:opacity-50  m-2"
               />
             </div>
 
@@ -96,7 +96,7 @@ function Items() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-center py-2  md:col-auto"
+                  className="flex flex-col items-center justify-between py-2"
                 >
                   <Image
                     src={product.imageSrc}
@@ -109,11 +109,11 @@ function Items() {
               );
             })}
 
-            <div className="flex flex-col items-center justify-center py-2  md:col-auto">
+            <div className="flex flex-col items-center justify-center p-6  md:col-auto">
               <FontAwesomeIcon
                 onClick={onForwardClicked}
                 icon={locale == "ar" ? faChevronLeft : faChevronRight}
-                className="text-2xl md:text-6xl hover:opacity-50 text-green-500 mb-2"
+                className="text-2xl md:text-6xl hover:opacity-50 text-green-500 m-2"
               />
             </div>
           </div>
