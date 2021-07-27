@@ -5,10 +5,7 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {
-      opacity: ['disabled'],
-      cursor: ['disabled'],
-    },
+    extend: {},
   },
   plugins: [
     require('tailwindcss-rtl'),
