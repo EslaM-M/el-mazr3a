@@ -10,36 +10,68 @@ import { useRouter } from "next/router";
 
 const productList = [
   {
-    imageSrc: "/images/tomato.jpg",
-    name: "Tomato",
+    imageSrc: "/images/crops/strawberry.jpg",
+    name: "strawberry",
   },
   {
-    imageSrc: "/images/lemon.jpg",
-    name: "Lemon",
+    imageSrc: "/images/crops/peppers.jpg",
+    name: "peppers",
   },
   {
-    imageSrc: "/images/tomato.jpg",
-    name: "Tomato2",
+    imageSrc: "/images/crops/roselle.jpg",
+    name: "roselle",
   },
   {
-    imageSrc: "/images/lemon.jpg",
-    name: "Lemon2",
+    imageSrc: "/images/crops/arugula.jpg",
+    name: "arugula",
   },
   {
-    imageSrc: "/images/tomato.jpg",
-    name: "Tomato3",
+    imageSrc: "/images/crops/basil.jpg",
+    name: "basil",
   },
   {
-    imageSrc: "/images/lemon.jpg",
-    name: "Lemon3",
+    imageSrc: "/images/crops/black-eggplant.jpg",
+    name: "black-eggplant",
   },
   {
-    imageSrc: "/images/tomato.jpg",
-    name: "Tomato4",
+    imageSrc: "/images/crops/blue-tea.jpg",
+    name: "blue-tea",
   },
   {
-    imageSrc: "/images/lemon.jpg",
-    name: "Lemon4",
+    imageSrc: "/images/crops/cucumber.jpg",
+    name: "cucumber",
+  },
+  {
+    imageSrc: "/images/crops/grape.jpg",
+    name: "grape",
+  },
+  {
+    imageSrc: "/images/crops/green-tea.jpg",
+    name: "green-tea",
+  },
+  {
+    imageSrc: "/images/crops/ground-cherry.jpg",
+    name: "ground-cherry",
+  },
+  {
+    imageSrc: "/images/crops/lemon.jpg",
+    name: "lemon",
+  },
+  {
+    imageSrc: "/images/crops/lettuce.jpg",
+    name: "lettuce",
+  },
+  {
+    imageSrc: "/images/crops/moringa.jpg",
+    name: "moringa",
+  },
+  {
+    imageSrc: "/images/crops/parsley.jpg",
+    name: "parsley",
+  },
+  {
+    imageSrc: "/images/crops/white-eggplant.jpg",
+    name: "white-eggplant",
   },
 ];
 function Items() {
@@ -47,7 +79,7 @@ function Items() {
   const [endIndex, setEndIndex] = useState(4);
   const [products, setProducts] = useState([]);
 
-  const { t } = useTranslation("landing");
+  const { t } = useTranslation(['crops','landing']);
   const { locale } = useRouter();
 
   useEffect(() => {
@@ -76,7 +108,7 @@ function Items() {
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mx-auto text-center pb-12 md:pb-16">
-            <h2 className="h2 mb-4">{t("seeds_you_can_farm")}</h2>
+            <h2 className="h2 mb-4">{t("landing:seeds_you_can_farm")}</h2>
           </div>
           {/* Items */}
           <div className="flex space-x-2">
@@ -104,7 +136,7 @@ function Items() {
                     height="300"
                     alt={product.name}
                   />
-                  <p>{product.name}</p>
+                  <p>{t(product.name)}</p>
                 </div>
               );
             })}

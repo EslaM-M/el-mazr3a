@@ -50,7 +50,7 @@ export default function Home(props) {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["landing"])),
+      ...(await serverSideTranslations(locale, ["landing","crops"])),
       // Will be passed to the page component as props
     },
   };
