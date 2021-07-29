@@ -79,7 +79,7 @@ function Items() {
   const [endIndex, setEndIndex] = useState(4);
   const [products, setProducts] = useState([]);
 
-  const { t } = useTranslation(['crops','landing']);
+  const { t } = useTranslation(["crops", "landing"]);
   const { locale } = useRouter();
 
   useEffect(() => {
@@ -88,14 +88,14 @@ function Items() {
   }, []);
   const onBackClicked = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-      setEndIndex(endIndex - 1);
+      setStartIndex(startIndex - 4);
+      setEndIndex(endIndex - 4);
     }
   };
   const onForwardClicked = () => {
     if (endIndex < productList.length) {
-      setStartIndex(startIndex + 1);
-      setEndIndex(endIndex + 1);
+      setStartIndex(startIndex + 4);
+      setEndIndex(endIndex + 4);
     }
   };
   useEffect(() => {
