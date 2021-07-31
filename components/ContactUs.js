@@ -16,6 +16,8 @@ export default function ContactUs() {
 
   const [userResponse, setUserResponse] = useState(null);
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const onChangeAddress = (event) => {
     setAddress(event.target.value);
   };
@@ -24,6 +26,7 @@ export default function ContactUs() {
     setPhone(event.target.value);
   };
   const requestFarm = async (event) => {
+    setErrorMessage(null);
     event.preventDefault();
     setIsRequestSent(true);
     try {
@@ -37,6 +40,7 @@ export default function ContactUs() {
       });
       setUserResponse(data);
     } catch (e) {
+      setErrorMessage("ERROR_WHILE_SENDING_REQUEST");
     } finally {
       setIsRequestSent(false);
     }
@@ -63,28 +67,35 @@ export default function ContactUs() {
 
                   {/* CTA form */}
                   <form className="w-full lg:w-auto">
-                    <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                      <input
-                        type="phone"
-                        onChange={onChangePhone}
-                        className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400"
-                        placeholder={t("phonenumber")}
-                        aria-label="Phone number"
-                      />
-                      <input
-                        className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400 lg:mx-2"
-                        type="text"
-                        onChange={onChangeAddress}
-                        placeholder={t("address")}
-                        aria-label="Address"
-                      />
-                      <button
-                        onClick={requestFarm}
-                        disabled={!address || !phone || isRequestSent}
-                        className="btn text-white bg-green-600 hover:bg-green-700 shadow truncate disabled:cursor-not-allowed disabled:opacity-50"
-                      >
-                        {t("setup_farm_request")}
-                      </button>
+                    <div className="max-w-xs mx-auto sm:max-w-md lg:mx-0">
+                      <div className="flex flex-col sm:flex-row justify-center">
+                        <input
+                          type="phone"
+                          onChange={onChangePhone}
+                          className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400"
+                          placeholder={t("phonenumber")}
+                          aria-label="Phone number"
+                        />
+                        <input
+                          className="w-full appearance-none bg-white-100 border border-green-400 focus:border-green-500 rounded-sm px-4 py-3 mb-2 sm:mb-0 text-green-600 placeholder-gray-400 lg:mx-2"
+                          type="text"
+                          onChange={onChangeAddress}
+                          placeholder={t("address")}
+                          aria-label="Address"
+                        />
+                        <button
+                          onClick={requestFarm}
+                          disabled={!address || !phone || isRequestSent}
+                          className="btn text-white bg-green-600 hover:bg-green-700 shadow truncate disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          {t("setup_farm_request")}
+                        </button>
+                      </div>
+                      {errorMessage && (
+                        <div className="flex mx-auto text-red-500 text-sm my-4">
+                          {t("ERROR_WHILE_SENDING_REQUEST")}
+                        </div>
+                      )}
                     </div>
                     {/* Success message */}
                     {/* <p className="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> */}

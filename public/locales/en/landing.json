@@ -19,5 +19,6 @@
   "setup_pricing_starts_with": "Setup starts with 70EGP.",
   "footer_copyright": "Made by Mosmera. All rights reserved.",
   "success": "Success!",
-  "request-sent-successfully":"Thank you for choosing Mosmera, our team will contact you in the following few days and help you to create your lovely fruitful farm."
+  "request-sent-successfully":"Thank you for choosing Mosmera, our team will contact you in the following few days and help you to create your lovely fruitful farm.",
+  "ERROR_WHILE_SENDING_REQUEST":"Sorry, Please try again later"
 }

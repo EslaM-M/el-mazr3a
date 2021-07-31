@@ -75,9 +75,33 @@ const productList = [
   },
 ];
 function Items() {
+  const [listSize, setListSize] = useState(4);
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(4);
   const [products, setProducts] = useState([]);
+  const [width, setWidth] = useState(1024);
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    setWidth(window.innerWidth);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+
+  let isMobile = width <= 768;
+  useEffect(() => {
+    if (isMobile) {
+      setListSize(2);
+      setEndIndex(2);
+    } else {
+      setListSize(4);
+      setStartIndex(0);
+      setEndIndex(4);
+    }
+  }, [width, isMobile]);
 
   const { t } = useTranslation(["crops", "landing"]);
   const { locale } = useRouter();
@@ -88,14 +112,14 @@ function Items() {
   }, []);
   const onBackClicked = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - 4);
-      setEndIndex(endIndex - 4);
+      setStartIndex(startIndex - listSize);
+      setEndIndex(endIndex - listSize);
     }
   };
   const onForwardClicked = () => {
     if (endIndex < productList.length) {
-      setStartIndex(startIndex + 4);
-      setEndIndex(endIndex + 4);
+      setStartIndex(startIndex + listSize);
+      setEndIndex(endIndex + listSize);
     }
   };
   useEffect(() => {
@@ -111,16 +135,16 @@ function Items() {
             <h2 className="h2 mb-4">{t("landing:seeds_you_can_farm")}</h2>
           </div>
           {/* Items */}
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 me-2">
             {/* Item */}
             <div
-              className="flex flex-col items-center justify-center p-6  md:col-auto"
+              className="flex flex-col items-center justify-center p-6"
               onClick={onBackClicked}
             >
               <FontAwesomeIcon
                 onClick={onBackClicked}
                 icon={locale == "ar" ? faChevronRight : faChevronLeft}
-                className="text-2xl md:text-6xl text-green-500 hover:opacity-50  m-2"
+                className="text-2xl md:text-6xl text-green-500 hover:opacity-50"
               />
             </div>
 
@@ -128,24 +152,26 @@ function Items() {
               return (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-between py-2"
+                  className="flex flex-col items-center justify-between"
                 >
-                  <Image
-                    src={product.imageSrc}
-                    width="300"
-                    height="300"
-                    alt={product.name}
-                  />
-                  <p>{t(product.name)}</p>
+                  <div className="w-3/4">
+                    <Image
+                      src={product.imageSrc}
+                      width="250"
+                      height="250"
+                      alt={product.name}
+                    />
+                  </div>
+                  <p className="text-xs">{t(product.name)}</p>
                 </div>
               );
             })}
 
-            <div className="flex flex-col items-center justify-center p-6  md:col-auto">
+            <div className="flex flex-col items-center justify-center p-6">
               <FontAwesomeIcon
                 onClick={onForwardClicked}
                 icon={locale == "ar" ? faChevronLeft : faChevronRight}
-                className="text-2xl md:text-6xl hover:opacity-50 text-green-500 m-2"
+                className="text-2xl md:text-6xl hover:opacity-50 text-green-500"
               />
             </div>
           </div>
