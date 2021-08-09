@@ -3,12 +3,13 @@ import { useRouter } from "next/router";
 
 import Header from "../components/Header";
 import HeroHome from "../components/HeroHome";
-import Gallery from "../components/Gallery";
+// import Gallery from "../components/Gallery";
 import FeaturesBlocks from "../components/FeaturesBlocks";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
+import dynamic from 'next/dynamic'
+const DynamicGallery = dynamic(() => import('../components/Gallery'))
 import AOS from "aos";
 import Items from "../components/Items";
 
@@ -36,7 +37,8 @@ export default function Home(props) {
       <main className="flex-grow">
         {/*  Page sections */}
         <HeroHome />
-        <Gallery />
+        
+        <DynamicGallery />
         <FeaturesBlocks />
         <Items />
         <ContactUs />
