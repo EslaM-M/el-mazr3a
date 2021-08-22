@@ -1,5 +1,4 @@
 {
-  "setup_farm_request": "Setup Farm",
   "mosmera_slogan": "Start your fruitful farm",
   "mosmera_brief": "Mosmera will help you to turn your balacony or roof or garden into a fruitful green area ... we will help you starting from choosing the seeds to reaping your own fruits.",
   "latest_work": "Latest Work",
@@ -17,7 +16,6 @@
   "phonenumber": "Phone number",
   "address": "Address",
   "setup_pricing_starts_with": "Setup starts with 70EGP.",
-  "footer_copyright": "Made by Mosmera. All rights reserved.",
   "success": "Success!",
   "request-sent-successfully":"Thank you for choosing Mosmera, our team will contact you in the following few days and help you to create your lovely fruitful farm.",
   "ERROR_WHILE_SENDING_REQUEST":"Sorry, Please try again later"

@@ -23,7 +23,7 @@ function LanguageSwitcher({}) {
 
 function Header() {
   const [top, setTop] = useState(true);
-  const { t } = useTranslation("landing");
+  const { t } = useTranslation("common");
   // detect whether user has scrolled the page down by 10px
   useEffect(() => {
     const scrollHandler = () => {
