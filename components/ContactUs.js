@@ -7,6 +7,7 @@ import Image from "next/image";
 import { data } from "autoprefixer";
 import RequestSuccess from "./RequestSuccess";
 export default function ContactUs() {
+  const { t: tCommon } = useTranslation("common");
   const { t } = useTranslation("landing");
 
   const [phone, setPhone] = useState(null);
@@ -88,7 +89,7 @@ export default function ContactUs() {
                           disabled={!address || !phone || isRequestSent}
                           className="btn text-white bg-green-600 hover:bg-green-700 shadow truncate disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                          {t("setup_farm_request")}
+                          {tCommon("setup_farm_request")}
                         </button>
                       </div>
                       {errorMessage && (
